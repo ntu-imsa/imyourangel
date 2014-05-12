@@ -1,9 +1,7 @@
 <?php
-// Create our Application instance (replace this with your appId and secret).
-$facebook = new Facebook(array(
-  'appId'  => '1434732186749087',
-  'secret' => 'cde5c80e82a3d84ca9473527be95db77',
-));
+
+require 'settings.php';
+
 // Get User ID
 $user = $facebook->getUser();
 
@@ -42,9 +40,9 @@ function qMysql($str){
 		die('Could not connect: ' . mysql_error());
    }
    mysql_select_db("imyourangel_2013", $link) or die(mysql_error());
-   mysql_query("SET NAMES 'utf8'"); 
-   mysql_query("SET CHARACTER_SET_CLIENT=utf8"); 
-   mysql_query("SET CHARACTER_SET_RESULTS=utf8"); 
+   mysql_query("SET NAMES 'utf8'");
+   mysql_query("SET CHARACTER_SET_CLIENT=utf8");
+   mysql_query("SET CHARACTER_SET_RESULTS=utf8");
    $result = mysql_query($str, $link) or die(mysql_error());
    mysql_close($link);
    return $result;
